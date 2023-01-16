@@ -31,7 +31,7 @@ def home():
     return render_template('upload.html')
 
 
-# 등록 동작
+# 등록 동작방식
 @app.route("/upload_post", methods=["POST"])
 def bucket_post():
     # title_receive = request.form['title_give']
