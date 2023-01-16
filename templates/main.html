@@ -11,35 +11,33 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap" rel="stylesheet">
 
-    <title>Honey Hobby</title>
+    <title>HoneyHobby</title>
 
     <style>
         .mytitle {
             width: 100%;
             height: 250px;
-
             background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('');
             background-position: center;
             background-size: cover;
-            color: white;
-
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            background-color:black;
         }
+        
+        .mytitle h1{
+            font-size: 60px;
+            font-family: 'Dongle', sans-serif;
+            color: yellow;
+        }
+        
         .mytitle > button {
             width: 200px;
             height: 50px;
-
-            background-color: transparent;
-            color: white;
-
-            border-radius: 50px;
-            border: 1px solid white;
-
-            margin-top: 10px;
         }
 
         .mytitle > button:hover {
@@ -50,6 +48,19 @@
             margin: 40px auto 0px auto;
             width: 95%;
             max-width: 1200px;
+        }
+        body{
+            background-color: lightgoldenrodyellow;
+        }
+
+        #allbox{
+            width:1400px;
+            margin:0 auto;
+        }
+
+        .card-header{
+            background-color: black;
+            color:white;
         }
     </style>
 
@@ -77,9 +88,9 @@
 <body>
     <div class="mytitle">
         <h1>Honey hobby</h1>
-        <button onclick="connecting()">취미 등록하기</button>
+        <button type="button" class="btn btn-warning" onclick="connecting()">취미 등록하기</button>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="row row-cols-1 row-cols-md-2 g-4" id="allbox">
   <div class="col">
     <div class="card">
         <div class="card-header">Header</div>
