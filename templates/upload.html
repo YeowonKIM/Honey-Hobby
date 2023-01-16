@@ -43,6 +43,31 @@
             box-shadow: 0px 0px 3px 0px gray;
 
         }
+        
+        .mybtns{
+          display: flex;
+          justify-content: center;
+        }
+        
+         #post-box{
+          background-color: lightgoldenrodyellow;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          border-radius: 5px;
+        }
+
+        body{
+          background-color: black;
+        }
+        
+        .title h1{
+          text-align: center;
+          margin:10px auto 20px auto;
+        }
+
+        p{
+          color:lightgoldenrodyellow;
+          text-align: center;
+        }
     </style>
     <script>
         function save_hobby() {
@@ -67,9 +92,10 @@
     <h1>honeyhobby</h1>
 </div>
 
+<p>- 우리 함께 즐길만한 취미를 등록해주세요 ! -</p>
 <form action="/upload_post" method="post">
     <div class="myhobbyEnter" id="post-box">
-        <div>
+        <div class="title">
             <h1>취미 등록</h1>
         </div>
         <div class="form-floating mb-3">
