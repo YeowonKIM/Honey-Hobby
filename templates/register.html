@@ -12,19 +12,19 @@
     <link href="../static/register.css" rel="stylesheet">
 
     <script>
-        $(document).ready(function () {
-            userList = [] // 이메일 중복을 위해 기존 이메일을 받아올 리스트
-            get_user();
-        })
-
-        function get_user() {
-
-            $.ajax({
-                type: 'GET', url: '/signin', data: {}, success: function (response) {
-                    userList = response.users
-                }
-            })
-        }
+        // $(document).ready(function () {
+        //     userList = [] // ID 중복을 위해 기존 이메일을 받아올 리스트
+        //     get_user();
+        // })
+        //
+        // function get_user() {
+        //
+        //     $.ajax({
+        //         type: 'GET', url: '/signin', data: {}, success: function (response) {
+        //             userList = response.users
+        //         }
+        //     })
+        // }
 
         //회원가입 정보 저장, 유효성 검사
         function save_account() {
@@ -40,16 +40,16 @@
             //비밀번호 불일치 확인
             if (password !== pw_confirm) {
                 alert('비밀번호가 일치하지 않습니다')
-
+                return;
             }
 
-            //id 중복 제어
-            for (let i = 0; i < userList.length; i++) {
-                if (userList[i].id === id) {
-                    alert('이미 가입된 아이디입니다')
-                    return;
-                }
-            }
+            // //id 중복 제어
+            // for (let i = 0; i < userList.length; i++) {
+            //     if (userList[i].id === id) {
+            //         alert('이미 가입된 아이디입니다')
+            //         return;
+            //     }
+            // }
 
             $.ajax({
                 type: 'POST',
@@ -75,15 +75,15 @@
     <div class="resister-box">
         <h1>회원가입</h1>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="email" class="form-control" id="inputID" placeholder="name@example.com">
             <label for="floatingInput">ID</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="inputID" placeholder="Password">
+            <input type="password" class="form-control" id="inputPW" placeholder="Password">
             <label for="floatingPassword">Password</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="inputPW" placeholder="Password">
+            <input type="password" class="form-control" id="pw_confirm" placeholder="Password">
             <label for="floatingPassword">비밀번호 확인</label>
         </div>
         <div class="check-box">

@@ -43,7 +43,7 @@ def signin():
     # pw를 암호화합니다.
     pw_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
     # 해당 유저를 찾습니다.
-    result = db.users.find_one({'email': id_receive, 'password': pw_hash})
+    result = db.users.find_one({'id': id_receive, 'password': pw_hash})
     # 찾으면 토큰을 만들어 발급합니다.
     if result is not None:
         payload = {'id': id_receive, 'exp': datetime.utcnow() + timedelta(seconds=60 * 60 * 24)}
@@ -71,7 +71,7 @@ def page_main():
 @app.route("/api/signup", methods=["POST"])
 def web_signup_post():
     id_receive = request.form['id_give']
-    password_receive = request.form['pw_give']
+    password_receive = request.form['password_give']
 
     pw_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
     doc = {'id': id_receive, 'password': pw_hash}
