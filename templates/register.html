@@ -10,6 +10,82 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 
     <link href="../static/register.css" rel="stylesheet">
+    <style>
+
+        .nav {
+            width: 100%;
+            height: 100px;
+            background-color: black;
+        }
+
+        .register {
+            width: 100%;
+            height: 600px;
+            background-color: lightgoldenrodyellow;
+            position: absolute;
+        }
+
+        .resister-box {
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            border-radius: 5px;
+            margin: 0 auto;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            position: relative;
+        }
+
+        .resister-box h1 {
+            text-align: center;
+            margin: 20px auto 50px auto;
+        }
+
+        .check-box{
+            display: flex;
+            flex-direction: row;
+            margin:0 auto;
+            margin-top:20px;
+        }
+
+
+
+        .button-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .alert-box{
+            text-align: center;
+            margin-top: 10px;
+
+        }
+
+        .logo{
+        display: flex;
+        margin:0 auto;
+        margin-top:20px;
+
+    }
+
+    .logo h1{
+        color:yellow;
+        font-family: 'Dongle', sans-serif;
+        font-size: 50px;
+    }
+
+    #inputID{
+        margin-bottom:20px;
+    }
+
+
+
+    </style>
 
     <script>
         // $(document).ready(function () {
@@ -42,6 +118,8 @@
                 alert('비밀번호가 일치하지 않습니다')
                 return;
             }
+
+
 
             // //id 중복 제어
             // for (let i = 0; i < userList.length; i++) {
@@ -86,23 +164,7 @@
             <input type="password" class="form-control" id="pw_confirm" placeholder="Password">
             <label for="floatingPassword">비밀번호 확인</label>
         </div>
-        <div class="check-box">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    남
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    여
-                </label>
-            </div>
-        </div>
-        <!--        <div class="alert-box">-->
-        <!--            <p class="wrong" id="confirm-alert">비밀번호가 일치하지 않습니다.</p>-->
-        <!--        </div>-->
+
         <div class="button-box">
             <button type="button" class="btn btn-warning" onclick="save_account()">회원가입</button>
         </div>

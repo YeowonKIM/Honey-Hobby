@@ -11,7 +11,64 @@
 
 
     <link href="../static/login.css" rel="stylesheet">
+    <style>
 
+    .nav{
+        width:100%;
+        height: 100px;
+        background-color: black;
+    }
+    .login{
+        width:100%;
+        height:600px;
+        background-color:lightgoldenrodyellow;
+        position:absolute;
+
+    }
+    .login-box{
+        width:400px;
+        height:400px;
+        background-color: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-top:100px;
+        display: flex;
+        flex-direction: column;
+        padding:20px;
+        position:relative;
+    }
+
+    .login-box h1{
+        text-align: center;
+        margin: 20px auto 50px auto;
+    }
+
+    .button-box{
+        display: flex;
+        flex-direction: row;
+        margin: 50px auto 0px auto;
+    }
+
+    button{
+        margin-right:10px;
+    }
+
+    .logo{
+        display: flex;
+        margin:0 auto;
+        margin-top:20px;
+
+    }
+
+    .logo h1{
+        color:yellow;
+        font-family: 'Dongle', sans-serif;
+        font-size: 50px;
+
+    }
+
+    </style>
     <script>
         function sign_up(){
         location.href ="/signup"
@@ -27,7 +84,7 @@
                 data: {id_give:id, pw_give:pw},
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        $.cookie('mytoken', response['token'], {path:'/'});
+                        // $.cookie('mytoken', response['token'], {path:'/'});
                         //로그인이 정상적으로 된다면 token을 받아옵니다.
                         //이 토큰을 mytoken이라는 key값으로 쿠키에 저장합니다.
                         alert('로그인 성공!')
